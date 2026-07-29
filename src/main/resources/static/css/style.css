@@ -1,0 +1,141 @@
+body{
+
+margin:0;
+
+background:#f4f6f9;
+
+font-family:Arial;
+
+}
+
+.wrapper{
+
+display:flex;
+
+}
+
+.sidebar{
+
+width:230px;
+
+height:100vh;
+
+background:#212529;
+
+color:white;
+
+padding:20px;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.sidebar li{
+
+padding:15px;
+
+cursor:pointer;
+
+border-radius:6px;
+
+}
+
+.sidebar li:hover{
+
+background:#495057;
+
+}
+
+.main{
+
+flex:1;
+
+padding:20px;
+
+}
+
+.card{
+
+padding:25px;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+}
+
+.income{
+
+background:#198754;
+
+}
+
+.expense{
+
+background:#dc3545;
+
+}
+
+.balance{
+
+background:#0d6efd;
+
+}
+
+.chart-box{
+
+height:300px;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:10px;
+
+box-shadow:0 0 10px gray;
+
+font-size:25px;
+
+}
+body.dark-mode{
+
+    background-color:#121212 !important;
+
+    color:white;
+
+}
+
+
+.dark-mode .card{
+
+    background-color:#1e1e1e;
+
+    color:white;
+
+}
+
+
+.dark-mode .table{
+
+    color:white;
+
+}
+
+
+.dark-mode .navbar{
+
+    background-color:#000 !important;
+
+}

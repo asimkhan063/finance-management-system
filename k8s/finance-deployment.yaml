@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: finance-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: finance
+
+  template:
+    metadata:
+      labels:
+        app: finance
+
+    spec:
+      containers:
+        - name: finance
+          image: finance-app
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8080
+
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-db:3306/finance_db
+
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root

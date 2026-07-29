@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <a th:href="@{/admin/user/role/{id}(id=${user.id})}"
+       class="btn btn-warning btn-sm">
+
+        Change Role
+
+    </a>
+
+    <a th:href="@{/admin/user/delete/{id}(id=${user.id})}"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('Delete User?')">
+
+        Delete
+
+    </a>
+    <div class="card mb-3 shadow">
+
+        <div class="card-body">
+
+            <form th:action="@{/admin/users}" method="get">
+
+                <div class="row">
+
+                    <div class="col-md-10">
+
+                        <input
+                                type="text"
+                                name="keyword"
+                                class="form-control"
+                                placeholder="Search by Name or Email"
+                                th:value="${keyword}"
+                        >
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button
+                                class="btn btn-primary w-100">
+
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
