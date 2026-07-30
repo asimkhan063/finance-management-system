@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI/CD
 
 on:
   push:
@@ -33,3 +33,18 @@ jobs:
 
       - name: Build
         run: mvn clean verify
+
+      - name: Build Docker Image
+        run: docker build -t finance-management-system .
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.asimkhan063 }}
+          password: ${{ secrets.haidairali13 }}
+
+      - name: Tag Image
+        run: docker tag finance-management-system ${{ secrets.asimkhan063 }}/finance-management-system:latest
+
+      - name: Push Image
+        run: docker push ${{ secrets.asimkhan063 }}/finance-management-system:latest
